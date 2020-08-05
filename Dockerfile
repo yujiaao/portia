@@ -12,6 +12,8 @@ COPY slybot/requirements.txt /app/slybot/requirements.txt
 COPY slyd/requirements.txt /app/slyd/requirements.txt
 COPY portia_server/requirements.txt /app/portia_server/requirements.txt
 
+COPY docker/sources.list /etc/apt/sources.list
+
 RUN /app/provision.sh prepare_install && \
     /app/provision.sh install_deps && \
     /app/provision.sh install_qtwebkit_deps && \
